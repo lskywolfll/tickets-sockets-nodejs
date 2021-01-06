@@ -18,15 +18,16 @@ class TicketControl {
     reiniciarConteo() {
         this.ultimo = 0;
 
-        grabarInformacion();
+        this.grabarInformacion();
 
-        return `Ticket ${this.ultimo}`;
+
     }
 
     siguiente() {
         this.ultimo += 1;
+        this.grabarInformacion();
 
-        grabarInformacion();
+        return `Ticket ${this.ultimo}`;
     }
 
     grabarInformacion() {
