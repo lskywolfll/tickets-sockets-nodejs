@@ -11,7 +11,8 @@ io.on('connection', (client) => {
     })
 
     client.emit("estadoActual", {
-        actual: ticketControl.getUltimoTicket()
+        actual: ticketControl.getUltimoTicket(),
+        ultimos4: ticketControl.getUltimos4()
     })
 
     client.on("atenderTicket", ({ escritorio }, callback) => {
@@ -27,6 +28,7 @@ io.on('connection', (client) => {
 
         callback(atenderTicket);
 
+        client.broadcast.emit("ultimos4", ticketControl.getUltimos4());
     })
 
 
