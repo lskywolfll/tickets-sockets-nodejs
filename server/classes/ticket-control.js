@@ -58,10 +58,11 @@ class TicketControl {
             return 'No hay tickets';
         }
 
-        let numeroTicket = this.tickets[0].Numero;
+        const numeroTicket = this.tickets[0].numero;
         this.tickets.shift();
 
-        let atenderTicket = new Ticket(numeroTicket, escritorio);
+        const atenderTicket = new Ticket(numeroTicket, escritorio);
+
         this.ultimos4.unshift(atenderTicket);
 
         if (this.ultimos4.length > 4) {

@@ -14,4 +14,21 @@ io.on('connection', (client) => {
         actual: ticketControl.getUltimoTicket()
     })
 
+    client.on("atenderTicket", ({ escritorio }, callback) => {
+
+        if (!escritorio) {
+            return callback({
+                err: true,
+                message: "El escritorio es necesario"
+            })
+        }
+
+        let atenderTicket = ticketControl.atenderTicket(escritorio);
+
+        callback(atenderTicket);
+
+    })
+
+
+
 });
