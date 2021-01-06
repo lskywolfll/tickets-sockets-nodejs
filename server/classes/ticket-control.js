@@ -30,6 +30,10 @@ class TicketControl {
         return `Ticket ${this.ultimo}`;
     }
 
+    getUltimoTicket() {
+        return `Ticket ${this.ultimo}`;
+    }
+
     grabarInformacion() {
         let jsonData = {
             ultimo: this.ultimo,

@@ -12,6 +12,12 @@ socket.on('disconnect', () => {
     console.log("Desconectado")
 })
 
+socket.on('estadoActual', ({ actual }) => {
+
+    label.text(actual);
+
+})
+
 
 $("button").on('click', () => {
 
